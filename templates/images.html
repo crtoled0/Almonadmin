@@ -1,0 +1,88 @@
+<!-- ko if: imgMapp() -->
+<!-- Pick Image Modal -->
+<div id="pickImageMod" class="modal fade ibox float-e-margins" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header ibox-title">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Select or Upload Images</h4>
+          </div>
+          <div class="modal-body ibox-content">
+            <div class="row">
+                <div class="col-lg-12">
+                  <button class="btn btn-primary grid-item" title="Upload New Images" type="button">
+                    <i class="fa fa-cloud-upload"></i>&nbsp;<span>Upload New Images</span>
+                  </button>
+                  <span class="pull-right" data-bind="if: selectedImgs().length > 0">
+                    <button class="btn btn-primary grid-item" title="Upload New Images" type="button">
+                      <i class="fa fa-check"></i>&nbsp;<span>Pick (<span data-bind="html:selectedImgs().length">0</span>) Images</span>
+                    </button>
+                  </span>
+                </div>
+            </div>
+            <div class="row">
+                  <div class="grid col-lg-3 imgContainer">
+                    <!-- ko foreach: {data: imagesArr ,as:'$pic'} -->
+                      <a class="grid-item" href="#" title="">
+                        <!-- ko if: $parent.selectedImgs().indexOf($pic.id) === -1 -->
+                        <div class="imageOverDiv">
+                              <button data-bind="click: function(){$parent.selectImage($pic.id);}" class="btn btn-primary btn-circle btn-lg" type="button" title="Select"><i class="fa fa-check"></i></button>
+                        </div>
+                        <!-- /ko -->
+                        <!-- ko if: $parent.selectedImgs().indexOf($pic.id) !== -1 -->
+                        <div class="imageOverDiv active">
+                              <button data-bind="click: function(){$parent.unselectImage($pic.id);}" class="btn btn-danger btn-circle btn-lg" type="button" title="Unselect"><i class="fa fa-times"></i></button>
+                        </div>
+                        <!-- /ko -->
+                        <img alt="image" data-bind="attr:{'src':$parent.getImageFromIndex($pic)}"  />
+                      </a>
+                    <!-- /ko -->
+                  </div>
+            </div>
+          </div>
+          <div class="modal-footer ibox-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+ </div><!-- /.modal -->
+<!--  /Pick Image Modal -->
+
+<!-- Upload Image Modal -->
+<div id="uploadImageMod" class="modal fade ibox float-e-margins" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header ibox-title">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Titulo prueba</h4>
+          </div>
+          <div class="modal-body ibox-content">
+            <p >Proando Modal</p>
+          </div>
+          <div class="modal-footer ibox-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+ </div><!-- /.modal -->
+<!--  /Upload Image Modal -->
+
+<!-- Image Details Modal -->
+<div id="imageDetailsMod" class="modal fade ibox float-e-margins" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header ibox-title">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Titulo prueba</h4>
+          </div>
+          <div class="modal-body ibox-content">
+            <p >Proando Modal</p>
+          </div>
+          <div class="modal-footer ibox-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+ </div><!-- /.modal -->
+<!--  /Image Details Modal -->
+<!-- /ko -->

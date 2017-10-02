@@ -1,0 +1,87 @@
+/**
+body{
+   color: #1ab394;
+}
+
+**/
+
+.ibox-title{
+   border-color: #1ab394 !important;
+}
+
+.profile-element img.img-circle{
+   width: 68px;
+   height: auto;
+}
+.cont-fixed-heigth{
+  height: 400px;
+}
+
+.al-list-container{
+   overflow-y: hidden;
+}
+
+.al-list-container div.widget{
+    margin-left: 5px;
+}
+
+.margin-out {
+  margin: 0px !important;
+}
+
+.list-group-item span.pull-right{
+   margin-top: -3%;
+}
+
+#profileContainer img.img-circle{
+  width: 100px;
+  height: auto;
+}
+
+.al-col-footer{
+  margin-top: 55px;
+  border-top: 1px solid #1ab394;
+  padding-top: 9px;
+}
+
+.dragDropSec{
+   width: 100%;
+   border: dashed 1px #1ab394;
+   height: 100px;
+   vertical-align: middle;
+}
+
+.dragDropSec span{
+   position: relative;
+   top: 20%;
+}
+
+#pickImageMod .imgContainer{
+   width: 100%;
+   height: 80%;
+}
+
+#pickImageMod .imgContainer img{
+   width: 200px;
+   height: auto;
+}
+
+.imageOverDiv{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color:rgba(255, 255, 255, 0.7);
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+/**    padding-left: 30%;
+    padding-top: 30%; **/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageOverDiv.active{
+    visibility: visible !important;
+    background-color:rgba(26, 179, 148, 0.5);
+}
