@@ -17,30 +17,27 @@
  * MA 02110-1301  USA
  */
 
-
-;(function(window, document, undefined){
-	"use strict";
-
-	/**
-	 * The actual constructor of the Global object
-	 */
-	var AjaxAdminConnImpl = {
-	    _version : 0.1,
-	    _config : {
-		  // wutzAdminHost : 'http://wutz.co.uk'
-		   adminHost : 'http://localhost:8001/almoneda'
-	    },
-            callService : function(service,params,method,authToken,callback){
+ // Main viewmodel class
+ define(['jquery'], function($) {
+     return new function AjaxAdmin() {
+         var mainMod = this;
+     //Private
+		  var  _version = 0.1;
+			var  _config = {
+			 // wutzAdminHost : 'http://wutz.co.uk'
+				adminHost : 'http://localhost/almoneda'
+			};
+     //Public
+        mainMod.callService = function(service,params,method,authToken,callback){
 								if(typeof authToken === "function"){
 								  	callback = authToken;
 										authToken = "";
 								}
-                var mySelf = this;
                 params = JSON.stringify(params);
                 $.ajax({
                         type: method,
                         dataType: 'json',
-                        url: mySelf._config.adminHost+"/"+service,
+                        url: _config.adminHost+"/"+service,
 												headers: { 'Authorization': authToken },
                         data: params,
                         success: function (result) {
@@ -54,11 +51,6 @@
                                 callback(err);
                         }
                });
-            }
-	};
-
-	var AjaxAdmin = function(){};
-	AjaxAdmin.prototype = AjaxAdminConnImpl;
-	AjaxAdmin = new AjaxAdmin();
-	window.ajaxAdmin = AjaxAdmin;
-})(window, document);
+        };
+     };
+ });

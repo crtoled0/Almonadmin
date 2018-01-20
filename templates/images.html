@@ -1,3 +1,4 @@
+<section data-bind="visible: visible()">
 <!-- ko if: imgMapp() -->
 <!-- Pick Image Modal -->
 <div id="pickImageMod" class="modal fade ibox float-e-margins" tabindex="-1" role="dialog">
@@ -10,9 +11,6 @@
           <div class="modal-body ibox-content">
             <div class="row">
                 <div class="col-lg-12">
-                  <button class="btn btn-primary grid-item" title="Upload New Images" type="button">
-                    <i class="fa fa-cloud-upload"></i>&nbsp;<span>Upload New Images</span>
-                  </button>
                   <span class="pull-right" data-bind="if: selectedImgs().length > 0">
                     <button class="btn btn-primary grid-item" title="Upload New Images" type="button">
                       <i class="fa fa-check"></i>&nbsp;<span>Pick (<span data-bind="html:selectedImgs().length">0</span>) Images</span>
@@ -22,6 +20,9 @@
             </div>
             <div class="row">
                   <div class="grid col-lg-3 imgContainer">
+                    <button class="btn btn-danger grid-item bigButton" title="Upload New Images" type="button">
+                      <i class="fa fa-cloud-upload"></i>&nbsp;<span></span>
+                    </button>
                     <!-- ko foreach: {data: imagesArr ,as:'$pic'} -->
                       <a class="grid-item" href="#" title="">
                         <!-- ko if: $parent.selectedImgs().indexOf($pic.id) === -1 -->
@@ -86,3 +87,4 @@
  </div><!-- /.modal -->
 <!--  /Image Details Modal -->
 <!-- /ko -->
+</section>

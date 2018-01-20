@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2016 CRTOLEDO.
  *
  * This library is free software; you can redistribute it and/or
@@ -26,10 +26,10 @@
     var ArrToolsImpl = {
         _version : 0.1,
         _config : {
-        }  
+        }
     };
 	/**
-     Private 
+     Private
     **/
     function compareNumberOrString(val1,val2){
                     if(!isNaN(val1) && !isNaN(val1)){
@@ -92,7 +92,7 @@
                             e = piv-1;
                             return insertIntoSortedArrayHelperNoCol(arr,s,e, newElem);
                         }
-                    }  
+                    }
     };
 
     function insertIntoSortedArrayHelper(arr,s,e, newElem,col){
@@ -141,7 +141,7 @@
                  else
                   return  insertIntoSortedArrayHelperNoCol(arr,0,arr.length-1,newElem);
     } ;
-                
+
 
     ArrToolsImpl.sortArray = function(arr,col2Comp){
         if(!arr || arr.length <= 1)
@@ -166,9 +166,11 @@
             }
             return column;
     };
-		
+
 	var ArrTools = function(){};
 	ArrTools.prototype = ArrToolsImpl;
 	ArrTools = new ArrTools();
 	window.arrTools = ArrTools;
+
+	return ArrTools;
 })(window, document);

@@ -85,3 +85,64 @@ body{
     visibility: visible !important;
     background-color:rgba(26, 179, 148, 0.5);
 }
+
+.mediumButton{
+  width: 220px;
+  height: 159px
+}
+
+.bigButton{
+   width: 200px;
+   height: 200px
+}
+
+.bigButton .fa{
+   font-size: 80px;
+}
+
+.leftCatBrowser{
+   min-height: 300px;
+   border-radius: 4px;
+}
+
+.moreTopPad{
+    padding-top: 30px;
+}
+
+.topRigthButton{
+  margin-left: 4px;
+  margin-top: 4px;
+}
+
+.dashHeadMenSec{
+   margin-left: 3px;
+   margin-bottom: 20px;
+}
+
+div.file{
+   border-radius: 4px;
+}
+
+.leftWidCont{
+   margin-left: 10px;
+}
+
+.separatorHor{
+    margin-top: 15px;
+    border-top: 1px solid #1ab394;
+    width: 100%;
+}
+
+.separatorVer{
+    margin-left: 15px;
+    border-left: 1px solid #1ab394;
+    height: 100%;
+}
+
+.sectionSwitcher{
+    margin-top: 30px;
+}
+
+.file-box{
+   width: 200px;
+}
